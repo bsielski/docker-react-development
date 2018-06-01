@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+
+  start:
+    build:
+      context: ..
+      dockerfile: ./docker-development/Dockerfile
+    env_file:
+      - ./.env-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../public:/home/node/public
+      - ../src:/home/node/src
